@@ -30,6 +30,15 @@
 			background-color: $color-white;
 		}
 	}
+
+	&--green {
+		background-color: $color-primery;
+		color: $color-white;
+
+		&::after {
+			background-color: $color-primery;
+		}
+	}
 	
 	&::after {
 		content: "";
