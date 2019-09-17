@@ -3,10 +3,10 @@
 	perspective: 150rem;
 	-moz-perspective: 150rem;
 	position: relative;
-	height: 50rem;
+	height: 52rem;
 
 	&__side {
-		height: 50rem;
+		height: 52rem;
 		transition: all 1.2s ease;
 		position: absolute;
 		top: 0;
@@ -14,6 +14,7 @@
 		width: 100%;
 		backface-visibility: hidden;
 		border-radius: 3px;
+		overflow: hidden;
 		box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
 		&--front {
@@ -42,12 +43,14 @@
 		background-size: cover;
 		height: 23rem;
 		background-blend-mode: screen; // Свойство background-blend-mode описывает то, 
-		// как фоновое изображение элемента должно накладываться на фоны других элементов.
+																	// как фоновое изображение элемента должно накладываться на фоны других элементов.
+																 // https://html5book.ru/svoystvo-background-blend-mode/
+		-webkit-clip-path: poligon(0 0, 100% 0, 100% 85%, 0 100%);
+		clip-path: poligon(0 0, 100% 0, 100% 85%, 0 100%);
 
 		&--1 {
-			background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark,
-				url(../../img/nat-5.jpg));
-			
+			background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+				url(../../img/nat-5.jpg);
 		}
 
 		// &--2 {
@@ -57,5 +60,51 @@
 		// &--3 {
 		// 	background-image: url(../../img/nat-5.jpg)
 		// }
+	}
+
+	&__heading {
+		font-size: 2.8rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		text-align: right;
+		color: $color-white;
+		position: absolute;
+		top: 12rem;
+		right: 2rem;
+		width: 75%;
+	}
+
+	&__heading-span {
+		padding: 1rem 1.5rem;
+		-webkit-box-decoration-break: clone;
+		box-decoration-break: clone;
+		
+		&--1 {
+			background-image: linear-gradient(	
+				to right bottom, 
+				rgba($color-secondary-light, .85), 
+				rgba($color-secondary-dark, .85)	
+			)
+		}
+	}
+
+	&__details {
+		padding: 3rem;
+
+		ul {
+			list-style: none;
+			width: 80%;
+			margin: 0 auto;
+
+			li {
+				text-align: center;
+				font-size: 1.5rem;
+				padding: 1rem;
+
+				&:not(:last-child) {
+					border-bottom: 1px solid $color-grey-light-2;
+				}
+			}
+		}
 	}
 }
