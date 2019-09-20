@@ -36,12 +36,58 @@
 		margin-left: 2rem;
 		margin-top: .7rem;
 		display: block;
-		transition: all .3s;
+		transition: all .5s;
 	}
 
 	&__input:placeholder-shown + &__label { // Смежные селекторы (A + B) B идет сразу же за A
 		opacity: 0;
 		visibility: hidden;
-		transform: translateY(-4rem); 
+		transform: translateY(-3.6rem); 
+	}
+
+	&__radio-group {
+		width: 49%;
+		display: inline-block;
+	}
+
+	&__radio-input {
+		display: none;
+	}
+
+	&__radio-label {
+		font-size: $default-font-size;
+		cursor: pointer;
+		position: relative;
+		padding-left: 4.5rem;
+	}
+
+	&__radio-button {
+		height: 3rem;
+		width: 3rem;
+		border: 5px solid $color-primery;
+		border-radius: 50%;
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		top: -.4rem;
+
+		&::after {
+			content: "";
+			height: 1.3rem;
+			width: 1.3rem;
+			border-radius: 50%;
+			display: block;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			background-color: $color-primery;
+			opacity: 0;
+			transition: opacity .2s;
+		}
+	}
+
+	&__radio-input:checked ~ &__radio-label &__radio-button::after {
+		opacity: 1;
 	}
 }
