@@ -576,7 +576,7 @@ body {
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
+  left: -25rem;
   z-index: 1500;
   opacity: 0;
   width: 0;
@@ -585,7 +585,7 @@ body {
 .navigation__list {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 67%;
   transform: translate(-50%, -50%);
   list-style: none;
   text-align: center;
@@ -644,6 +644,17 @@ body {
 
 .navigation__button:hover .navigation__icon::after {
   top: 1rem; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(135deg); }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-135deg); }
 
 .section-about {
   background-color: #f7f7f7;
