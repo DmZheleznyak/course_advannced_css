@@ -1,4 +1,24 @@
 @charset "UTF-8";
+/* 
+0 - 600px -> Phone
+600px - 900px -> Tablet Portrait
+900px - 1200px -> Tablet Landscape
+1200px - 1800px -> Desktop is where our normal styles apply            
+1800px - and more -> Big Desktop
+*/
+/*
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+37.5em = 600px
+56.25em = 900px
+75em = 1200px
+112.5em = 1800px
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -36,6 +56,15 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
@@ -470,8 +499,7 @@ body {
     visibility: visible; }
   .popup:target .popup__content {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    will-change: transform opacity; }
+    transform: translate(-50%, -50%) scale(1); }
   .popup__close:link, .popup__close:visited {
     color: #777;
     position: absolute;
