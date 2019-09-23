@@ -39,5 +39,19 @@
 	&__text {
 		font-size: 1.4rem;
 		margin-bottom: 4rem;
+
+		column-count: 2;
+		column-gap: 4rem;
+		column-rule: 1px solid $color-grey-light-2;
+
+		-moz-column-count: 2;
+		-moz-column-gap: 4rem;
+		-moz-column-rule: 1px solid $color-grey-light-2;
+
+		-moz-hyphens: auto;
+		-ms-hyphens: auto;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+// Свойство hyphens сообщает браузеру, как расставлять переносы слов в блоке текста. Словарь переносов хранится в браузере и подключается только при наличии атрибута lang с кодом языка. Так, для русского языка следует добавить lang="ru" к тегу <html> или непосредственно к абзацу текста.
 	}
 }
