@@ -888,6 +888,16 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh; }
+  .section-about .paragraph {
+    float: left; }
+    .section-about .paragraph::first-letter {
+      font-size: 36px;
+      /* Размер буквы */
+      color: #7ed56f;
+      /* Цвет буквы */
+      float: left;
+      /* Выравнивание по левому краю */
+      margin-right: .4rem; }
   @media (max-width: 56.25em) {
     .section-about {
       padding: 20rem 0; } }
